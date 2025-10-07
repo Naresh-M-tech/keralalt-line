@@ -1,0 +1,5 @@
+{
+  "name": "Copy of KSEBL Grid Intelligence Platform",
+  "description": "A mission-critical dashboard for the Kerala State Electricity Board (KSEB) to monitor grid health, manage repairs, view predictive analytics, and control assets via an interactive map.",
+  "requestFramePermissions": []
+}

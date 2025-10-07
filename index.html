@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KSEBL Grid Intelligence Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet.js for Map View -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #111827; /* Dark slate grey */
+      }
+      .leaflet-popup-content-wrapper {
+        background-color: #1f2937; /* gray-800 */
+        color: #d1d5db; /* gray-300 */
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      }
+      .leaflet-popup-content {
+        font-size: 14px;
+        margin: 10px !important;
+        line-height: 1.5;
+      }
+      .leaflet-popup-tip {
+        background-color: #1f2937;
+      }
+      .leaflet-control-layers {
+        background-color: rgba(31, 41, 55, 0.8);
+        color: #d1d5db;
+        border-radius: 5px;
+        border: 1px solid #4b5563;
+      }
+       .leaflet-control-layers-base label, .leaflet-control-layers-overlays label {
+        font-weight: 500;
+       }
+
+      /* Map Legend */
+      .legend {
+        padding: 6px 10px;
+        font: 14px 'Inter', sans-serif;
+        background: rgba(31, 41, 55, 0.8); /* gray-800 with transparency */
+        color: #d1d5db;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        line-height: 24px;
+      }
+      .legend h4 {
+        margin: 0 0 5px;
+        color: #f9fafb; /* gray-50 */
+        font-weight: 600;
+        font-size: 16px;
+      }
+      .legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.9;
+        border-radius: 50%;
+      }
+      .legend i.line {
+        width: 20px;
+        border-radius: 0;
+        height: 4px;
+        margin-top: 10px;
+      }
+      
+      /* Pulsing animation for markers */
+      @keyframes pulse {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+        }
+        70% {
+          transform: scale(2.5);
+          box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+        }
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+      }
+      .pulse-container {
+        position: relative;
+        width: 16px;
+        height: 16px;
+      }
+      .pulse-marker {
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+      /* New Alert Flash Animation */
+      @keyframes new-alert-flash-animation {
+        from {
+          background-color: rgba(59, 130, 246, 0.3); /* blue-500 with transparency */
+        }
+        to {
+          background-color: transparent;
+        }
+      }
+      .new-alert-flash {
+        animation: new-alert-flash-animation 2s ease-out;
+      }
+
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
