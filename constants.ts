@@ -8,13 +8,6 @@ export const kpiData = {
     gridHealth: 49.8,
 };
 
-export const alertsData: Alert[] = [
-    { id: 'TR-0095', type: 'Voltage Sag', severity: Severity.Critical, timestamp: '2024-07-28 14:30:15' },
-    { id: 'SUB-0012', type: 'Overload', severity: Severity.Critical, timestamp: '2024-07-28 14:25:02' },
-    { id: 'FD-0341', type: 'Phase Imbalance', severity: Severity.High, timestamp: '2024-07-28 13:55:41' },
-    { id: 'TR-0188', type: 'High Temperature', severity: Severity.High, timestamp: '2024-07-28 13:40:22' },
-];
-
 export const networkHealthData = [
     { name: 'Zone A', health: 65 },
     { name: 'Zone B', health: 80 },
@@ -55,35 +48,3 @@ export const disconnectorData: Disconnector[] = [
     { id: 'DIS-B01', assetId: 'SUB-0004', status: 'Disconnected', lastChanged: '2024-07-27 22:15:30', operator: 'Grid Operator' },
     { id: 'DIS-C01', assetId: 'FD-0089', status: 'Connected', lastChanged: '2024-07-28 09:45:10', operator: 'Auto' },
 ];
-
-// GeoJSON for Map View
-export const networkGeoData = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": { "id": "SUB-TVM", "type": "Substation", "status": "Healthy" },
-            "geometry": { "type": "Point", "coordinates": [76.9366, 8.5241] }
-        },
-        {
-            "type": "Feature",
-            "properties": { "id": "SUB-KOC", "type": "Substation", "status": "Warning" },
-            "geometry": { "type": "Point", "coordinates": [76.2673, 9.9312] }
-        },
-        {
-            "type": "Feature",
-            "properties": { "id": "TVM-LT-001", "type": "LT Line", "status": "Critical" },
-            "geometry": { "type": "LineString", "coordinates": [[76.9366, 8.5241], [76.9525, 8.5140]] }
-        },
-        {
-            "type": "Feature",
-            "properties": { "id": "KOC-LT-002", "type": "LT Line", "status": "Warning" },
-            "geometry": { "type": "LineString", "coordinates": [[76.2673, 9.9312], [76.2750, 9.9400]] }
-        },
-        {
-            "type": "Feature",
-            "properties": { "id": "TVM-KOC-HT-01", "type": "HT Line", "status": "Healthy" },
-            "geometry": { "type": "LineString", "coordinates": [[76.9366, 8.5241], [76.2673, 9.9312]] }
-        }
-    ]
-};

@@ -115,6 +115,21 @@
       .new-alert-flash {
         animation: new-alert-flash-animation 2s ease-out;
       }
+      
+      /* Ticket Update Flash Animation */
+      @keyframes ticket-update-flash-animation {
+        from {
+          background-color: rgba(96, 165, 250, 0.4); /* blue-400 with transparency */
+          transform: scale(1.02);
+        }
+        to {
+          background-color: transparent;
+          transform: scale(1);
+        }
+      }
+      .ticket-update-flash {
+        animation: ticket-update-flash-animation 1.5s ease-out;
+      }
 
     </style>
 <script type="importmap">
@@ -123,7 +138,8 @@
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "recharts": "https://aistudiocdn.com/recharts@^3.2.1"
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.45.0"
   }
 }
 </script>
